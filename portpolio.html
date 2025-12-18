@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이름 | 디자이너 개발자 포트폴리오</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- 1. 헤더 (고정 네비게이션) -->
+    <header id="header">
+      <nav class="container">
+        <h1 class="logo"><a href="#hero">Dev. 이채미</a></h1>
+        <ul class="nav-menu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 2. 히어로 섹션 (사진 추가 및 레이아웃 변경) -->
+    <section id="hero" class="section">
+      <div class="container hero-content-wrapper">
+        <!-- 왼쪽 텍스트 영역 -->
+        <div class="hero-text-area">
+          <p class="subtitle">
+            <i class="fab fa-react"></i> React & AI Driven Frontend
+          </p>
+          <h2 class="title">
+            미래 지향적인 <br />웹 서비스를 구현하는 <br />
+            <span class="highlight">프론트엔드 개발자 <br />이채미 </span
+            >입니다.
+          </h2>
+          <p class="description">
+            React 기반의 컴포넌트 설계에 능숙하며, <br />
+            Cursor와 chatGPT를 활용한 개발 생산성 최적화 경험을 보유하고
+            있습니다.
+          </p>
+          <a href="#projects" class="btn primary">View Case Studies</a>
+        </div>
+
+        <!-- 오른쪽 이미지 영역 (여기에 사진을 넣으세요!) -->
+        <div class="hero-image-area">
+          <img
+            src="증명사진2.jpg"
+            alt="전문 프론트엔드 개발자 OOO의 프로필 사진"
+            class="profile-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 기술 스택 섹션 -->
+    <section id="skills" class="section grey-bg">
+      <div class="container">
+        <h3 class="section-title">
+          Core Competencies & Stack<br /><span class="highlight"
+            >핵심 역량 및 스택</span
+          >
+        </h3>
+
+        <div class="skills-grid">
+          <div class="skill-card primary-stack">
+            <h4><i class="fab fa-react"></i> React Ecosystem</h4>
+            <p>React, JavaScript (ES6+), HTML, CSS, jQuery</p>
+            <p class="detail">
+              Singe Page Application (SPA) 개발 및 최적화 경험 다수.
+            </p>
+          </div>
+          <div class="skill-card secondary-stack">
+            <h4><i class="fas fa-magic"></i> AI Productivity & Tools</h4>
+            <p>chatGPT (Prompt Engineering), Cursor (AI IDE), VSC, Git</p>
+            <p class="detail">
+              LLM을 활용한 개발 프로세스 효율화 및 코드 리뷰 자동화 경험.
+            </p>
+          </div>
+          <div class="skill-card other-stack">
+            <h4><i class="fas fa-server"></i> Backend & Legacy</h4>
+            <p>PHP (Legacy System), Java Script, REST API, Database 이해</p>
+            <p class="detail">
+              프론트엔드-백엔드 연동 및 레거시 시스템 마이그레이션 경험.
+            </p>
+          </div>
+        </div>
+
+        <!-- 기술 스택 로고 횡스크롤 컨테이너를 skills-grid 아래로 이동 -->
+        <div class="skills-logo-container">
+          <div class="skills-logo-spinner">
+            <!-- 1. 첫 번째 로고 세트 (요청된 스택 반영) -->
+            <i class="fab fa-react" aria-label="React"></i>
+            <i class="fab fa-html5" aria-label="HTML5"></i>
+            <i class="fab fa-css3-alt" aria-label="CSS3"></i>
+            <i class="fab fa-js" aria-label="JavaScript"></i>
+            <i class="fab fa-php" aria-label="PHP"></i>
+            <i class="fas fa-code" aria-label="jQuery/Code"></i>
+            <i class="fas fa-robot" aria-label="ChatGPT/AI"></i>
+            <i class="fas fa-laptop-code" aria-label="Cursor/Tools"></i>
+
+            <!-- 2. 두 번째 로고 세트 (끊김 없는 스크롤을 위해 복제) -->
+            <i class="fab fa-react" aria-label="React"></i>
+            <i class="fab fa-html5" aria-label="HTML5"></i>
+            <i class="fab fa-css3-alt" aria-label="CSS3"></i>
+            <i class="fab fa-js" aria-label="JavaScript"></i>
+            <i class="fab fa-php" aria-label="PHP"></i>
+            <i class="fas fa-code" aria-label="jQuery/Code"></i>
+            <i class="fas fa-robot" aria-label="ChatGPT/AI"></i>
+            <i class="fas fa-laptop-code" aria-label="Cursor/Tools"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 프로젝트 섹션 -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h3 class="section-title">
+          Key Projects<br /><span class="highlight">주요 프로젝트</span>
+        </h3>
+        <div class="project-grid">
+          <article class="project-card">
+            <img
+              src="dust.jpg"
+              alt="React 프로젝트 썸네일"
+              class="project-image"
+            />
+            <div class="project-info">
+              <h4>대규모 SPA 리뉴얼</h4>
+              <p class="tech-stack">
+                #React #TypeScript #Recoil/Redux #Modern_CSS
+              </p>
+              <p>
+                수백만 사용자 대상 서비스의 React 기반 프론트엔드 전면 개편.
+              </p>
+              <a href="#" target="_blank" class="btn secondary">View Details</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img
+              src="D-ON.jpg"
+              alt="AI 활용 프로젝트 썸네일"
+              class="project-image"
+            />
+            <div class="project-info">
+              <h4>AI 기반 코드 어시스턴트 구축</h4>
+              <p class="tech-stack">#chatGPT #Cursor #JS #Code_Generation</p>
+              <p>
+                개발팀 내부 코드 생성 및 자동 문서화를 위한 AI 도구 개발 및
+                적용.
+              </p>
+              <a href="#" target="_blank" class="btn secondary">View Details</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <img
+              src="roundLab.jpg"
+              alt="PHP 연동 프로젝트 썸네일"
+              class="project-image"
+            />
+            <div class="project-info">
+              <h4>PHP 레거시 연동 인터페이스</h4>
+              <p class="tech-stack">#jQuery #PHP #Ajax #CSS3</p>
+              <p>
+                기존 PHP 백엔드 시스템과의 원활한 데이터 통신 및 인터페이스
+                개선.
+              </p>
+              <a href="#" target="_blank" class="btn secondary">View Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. 연락처 섹션 -->
+    <section id="contact" class="section">
+      <div class="container contact-content">
+        <h3 class="section-title">
+          Ready for Innovation<br />
+          <span class="highlight">함께 성장할 기회</span>
+        </h3>
+        <p>
+          제 경력과 기술 스택에 관심이 있으시다면 언제든지 연락 부탁드립니다.
+          혁신적인 도전에 동참할 준비가 되어 있습니다.
+        </p>
+        <a href="mailto:gloria_20@naver.com" class="btn primary large"
+          >gloria_20@naver.com</a
+        >
+        <div class="social-links">
+          <a
+            href="https://github.com/your-username"
+            target="_blank"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/your-profile"
+            target="_blank"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. 푸터 -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Dev. ChemiLee. AI-Enhanced Development.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

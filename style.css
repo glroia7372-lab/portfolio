@@ -1,0 +1,369 @@
+/* 폰트 및 다크 모드 기본 설정 */
+:root {
+  --primary-color: #007acc; /* React 블루 */
+  --text-color: #f0f0f0; /* 밝은 텍스트 */
+  --bg-color: #1e1e1e; /* 다크 배경 */
+  --secondary-bg: #2d2d2d;
+  --card-bg: #252526;
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Pretendard", sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background-color: var(--bg-color);
+}
+
+/* --- 공통 스타일 --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.grey-bg {
+  background-color: var(--secondary-bg);
+}
+
+.section-title {
+  font-size: 2.8rem;
+  margin-bottom: 60px;
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+/* --- 버튼 스타일 (다크 모드에 맞게) --- */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn.primary {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border-color: var(--primary-color);
+}
+
+.btn.primary:hover {
+  background-color: #0099ff;
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn.secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+/* --- 헤더 및 네비게이션 --- */
+#header {
+  background: rgba(30, 30, 30, 0.95); /* 반투명 다크 */
+  backdrop-filter: blur(5px); /* 배경 블러 효과 추가 */
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: var(--text-color);
+  margin-left: 30px;
+  transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+  color: var(--primary-color);
+}
+
+/* --- 히어로 섹션 --- */
+#hero {
+  padding: 180px 0;
+  text-align: left;
+}
+
+/* 기존 hero-content 대신 hero-content-wrapper 사용 */
+.hero-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 수직 중앙 정렬 */
+  text-align: left;
+}
+
+/* 텍스트 영역 (왼쪽) */
+.hero-text-area {
+  flex: 2; /* 텍스트가 더 많은 공간을 차지하게 함 */
+  max-width: 60%;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 4.5rem;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.description {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: #b0b0b0;
+}
+
+/* 이미지 영역 (오른쪽) */
+.hero-image-area {
+  flex: 1; /* 이미지가 차지하는 공간 */
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 정렬 */
+  padding-left: 50px;
+}
+
+/* 프로필 이미지 스타일 */
+.profile-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%; /* 원형 이미지 */
+  border: 5px solid var(--primary-color); /* 테두리 강조 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* --- 스킬 섹션 (로고 스크롤링) --- */
+.skills-logo-container {
+  /* 스크롤 영역 설정 */
+  width: 100%;
+  height: 80px; /* 로고가 보여질 높이 */
+  overflow: hidden; /* 영역 밖 로고 숨김 */
+  margin-top: 30px; /* skills-grid 아래에 여백 추가 */
+  margin-bottom: 0;
+  /* 배경 및 경계선 제거 */
+  background-color: transparent;
+}
+
+.skills-logo-spinner {
+  /* 로고 그룹을 수평으로 나열하고 애니메이션 적용 */
+  display: flex;
+  white-space: nowrap; /* 아이콘들이 줄바꿈되지 않도록 설정 */
+  animation: scroll-logos 40s linear infinite; /* 40초 동안 선형 스크롤 무한 반복 */
+}
+
+.skills-logo-spinner i {
+  /* 개별 로고 아이콘 스타일 */
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  opacity: 0.7;
+  margin: 0 40px; /* 아이콘 간격 조정 */
+  line-height: 80px; /* 수직 중앙 정렬 */
+  transition: opacity 0.3s, transform 0.3s;
+  flex-shrink: 0; /* 아이콘 크기가 줄어들지 않도록 함 */
+}
+
+.skills-logo-spinner i:hover {
+  opacity: 1; /* 호버 시 밝기 증가 */
+  transform: scale(1.1);
+}
+
+/* 오른쪽에서 왼쪽으로 이동하는 애니메이션 정의 */
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+  /* 전체 콘텐츠 너비의 50%만큼 이동시켜, 복제된 두 번째 세트가 첫 번째 세트를 완벽히 대체하게 함 */
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  text-align: left;
+}
+
+.skill-card {
+  padding: 30px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  border-left: 5px solid var(--primary-color);
+}
+
+.skill-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.skill-card p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.skill-card .detail {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* --- 프로젝트 섹션 --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.project-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.project-info h4 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.tech-stack {
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+/* --- 연락처 및 소셜 링크 --- */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-content p {
+  margin-bottom: 20px;
+}
+
+.social-links {
+  margin-top: 30px;
+}
+
+.social-links a {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+/* --- 푸터 --- */
+footer {
+  padding: 30px 0;
+  background-color: #111;
+  color: #777;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* --- 반응형 (모바일) --- */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  /* 히어로 섹션 모바일 레이아웃 조정 */
+  .hero-content-wrapper {
+    flex-direction: column; /* 세로로 쌓이게 변경 */
+    text-align: center;
+  }
+
+  .hero-text-area {
+    max-width: 100%;
+    order: 2; /* 텍스트를 이미지 아래로 이동 */
+  }
+
+  .hero-image-area {
+    order: 1; /* 이미지를 텍스트 위로 이동 */
+    justify-content: center;
+    padding: 0 0 30px; /* 아래쪽 여백 추가 */
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr; /* 모바일에서 1열로 변경 */
+  }
+
+  #hero {
+    padding: 100px 0;
+  }
+
+  .skills-logo-spinner i {
+    margin: 0 20px; /* 모바일에서 간격 줄임 */
+  }
+}
