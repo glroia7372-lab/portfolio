@@ -72,3 +72,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     */
 });
+
+const menu = document.querySelector("#mobile-menu");
+const menuLinks = document.querySelector(".nav-menu");
+
+// 1. 햄버거 메뉴 토글
+menu.addEventListener("click", function () {
+  menuLinks.classList.toggle("active");
+  menu.classList.toggle("is-active");
+});
+
+// 2. 메뉴 링크 클릭 시 메뉴 닫기 (사용자 경험 개선)
+document.querySelectorAll(".nav-menu a").forEach((n) =>
+  n.addEventListener("click", () => {
+    menuLinks.classList.remove("active");
+    menu.classList.remove("is-active");
+  })
+);

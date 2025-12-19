@@ -127,6 +127,78 @@ body {
   color: var(--primary-color);
 }
 
+/* 반응형 앱 레이아웃 설정 */
+
+/* 햄버거 버튼 스타일 (기본적으로 숨김) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* 모바일 환경 (768px 이하) */
+@media screen and (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 70px; /* 헤더 높이에 맞춤 */
+    right: -100%; /* 기본적으로 화면 밖 */
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+  }
+
+  .nav-menu.active {
+    right: 0; /* 클릭 시 화면 안으로 */
+  }
+
+  .nav-menu li {
+    margin: 15px 0;
+  }
+
+  .menu-toggle {
+    display: flex; /* 모바일에서 햄버거 노출 */
+  }
+
+  /* 히어로 섹션 이미지/텍스트 수직 정렬 */
+  .hero-content-wrapper {
+    flex-direction: column-reverse; /* 모바일에서 사진이 위로 오거나 순서 조정 */
+    text-align: center;
+  }
+
+  .hero-text-area {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .hero-image-area {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image {
+    max-width: 200px; /* 모바일 앱 스타일로 사진 크기 조절 */
+  }
+
+  /* 그리드 시스템을 1열로 변경 */
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- 히어로 섹션 --- */
 #hero {
   text-align: left;
