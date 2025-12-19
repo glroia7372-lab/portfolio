@@ -72,3 +72,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     */
 });
+
+const menuToggle = document.getElementById("mobile-menu");
+const navMenu = document.querySelector(".nav-menu");
+
+// 햄버거 버튼 클릭 시 메뉴 토글
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+// 메뉴 링크 클릭 시 메뉴 닫기 (사용자 경험 개선)
+const navLinks = document.querySelectorAll(".nav-menu a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("active");
+  });
+});
