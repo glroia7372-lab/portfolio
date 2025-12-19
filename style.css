@@ -127,43 +127,6 @@ body {
   color: var(--primary-color);
 }
 
-/* 햄버거 버튼 스타일 (기본적으로 숨김) */
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-}
-
-/* 모바일 레이아웃 (768px 이하) */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* 모바일에서 햄버거 버튼 보임 */
-  }
-
-  .nav-menu {
-    display: none; /* 기본 메뉴 숨김 */
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* 헤더 높이에 맞게 조절 */
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-    padding: 20px 0;
-    text-align: center;
-  }
-
-  /* 메뉴 활성화 시 노출 */
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .nav-menu li {
-    margin: 15px 0;
-  }
-}
-
 /* --- 히어로 섹션 --- */
 #hero {
   text-align: left;
