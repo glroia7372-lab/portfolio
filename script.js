@@ -153,3 +153,27 @@ window.onclick = function (event) {
     closeModal();
   }
 };
+
+function openResume() {
+  const modal = document.getElementById("projectModal");
+  const modalBody = document.getElementById("modal-body");
+
+  // 모달 내부 내용 구성
+  modalBody.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin: 0;">Resume</h2>
+            <a href="이채미_이력서.pdf" download="이채미_이력서.pdf" class="btn primary" style="font-size: 14px; padding: 8px 15px;">
+                <i class="fas fa-download"></i> PDF 다운로드
+            </a>
+        </div>
+        <div class="resume-container" style="position: relative; padding-bottom: 141%; height: 0; overflow: hidden;">
+            <iframe src="이채미_이력서.pdf" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                    type="application/pdf">
+            </iframe>
+        </div>
+    `;
+
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // 포트폴리오 배경 스크롤 방지
+}
