@@ -51,12 +51,18 @@
             UI/UX디자인, 개발 역량, 그리고 실전 고객 응대 경험까지 두루 갖춘
             <br />다각적인 능력을 보유하고 있습니다.
           </p>
-          <a
-            href="javascript:void(0);"
-            onclick="openResume()"
-            class="btn primary"
-            >이력서 보기 →</a
-          >
+          <!-- 이력서 보기 버튼 -->
+          <a href="이채미_이력서.pdf" target="_blank" class="btn primary">
+            이력서 보기 →
+          </a>
+
+          <!-- 모달 구조 (페이지 어딘가에 있어야 함) -->
+          <div id="projectModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <div id="modal-body"></div>
+            </div>
+          </div>
         </div>
 
         <!-- 오른쪽 이미지 영역 (여기에 사진을 넣으세요!) -->

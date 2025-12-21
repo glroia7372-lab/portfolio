@@ -115,65 +115,42 @@ const projectDetails = {
   },
 };
 
-// 2. 모달 열기 함수 (버튼 코드 추가)
+// 2. 모달 열기 함수
 function openModal(projectId) {
+  const project = projectDetails[projectId];
   const modal = document.getElementById("projectModal");
   const modalBody = document.getElementById("modal-body");
-  const data = projectDetails[projectId];
 
   modalBody.innerHTML = `
-        <h2>${data.title}</h2>
-        <img src="${data.image}" alt="${data.title}">
-        <p><strong>기술 스택:</strong> ${data.stack}</p>
-        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-        <p style="margin-bottom: 30px;">${data.desc}</p>
-        
-        <div style="text-align: center;">
-            <a href="${data.link}" target="_blank" class="btn primary modal-go-btn">
-                사이트 바로가기 <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-    `;
+    <h2>${project.title}</h2>
+    <img src="${project.image}" alt="${project.title}">
+    <p class="tech-stack" style="color: #666; font-weight: bold; margin: 15px 0;">${project.stack}</p>
+    <p style="margin-bottom: 25px;">${project.desc}</p>
+    <a href="${project.link}" target="_blank" class="modal-go-btn">프로젝트 보기 →</a>
+  `;
 
   modal.style.display = "block";
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow = "hidden"; // 배경 스크롤 방지
 }
 
 // 3. 모달 닫기 함수
 function closeModal() {
   const modal = document.getElementById("projectModal");
   modal.style.display = "none";
-  document.body.style.overflow = "auto"; // 스크롤 재개
+  document.body.style.overflow = "auto"; // 스크롤 복원
 }
 
-// 4. 모달 바깥 영역 클릭 시 닫기
+// 4. 모달 외부 클릭 시 닫기
 window.onclick = function (event) {
   const modal = document.getElementById("projectModal");
-  if (event.target == modal) {
+  if (event.target === modal) {
     closeModal();
   }
 };
 
-function openResume() {
-  const modal = document.getElementById("projectModal");
-  const modalBody = document.getElementById("modal-body");
-
-  // 모달 내부 내용 구성
-  modalBody.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <h2 style="margin: 0;">Resume</h2>
-            <a href="이채미_이력서.pdf" download="이채미_이력서.pdf" class="btn primary" style="font-size: 14px; padding: 8px 15px;">
-                <i class="fas fa-download"></i> PDF 다운로드
-            </a>
-        </div>
-        <div class="resume-container" style="position: relative; padding-bottom: 141%; height: 0; overflow: hidden;">
-            <iframe src="이채미_이력서.pdf" 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
-                    type="application/pdf">
-            </iframe>
-        </div>
-    `;
-
-  modal.style.display = "block";
-  document.body.style.overflow = "hidden"; // 포트폴리오 배경 스크롤 방지
-}
+// 5. ESC 키로 모달 닫기
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal();
+  }
+});
