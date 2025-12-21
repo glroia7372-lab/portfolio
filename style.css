@@ -566,6 +566,32 @@ body {
   color: #666;
 }
 
+/* 모달 내 바로가기 버튼 스타일 */
+.modal-go-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #333; /* 포트폴리오 메인 색상에 맞춰 수정하세요 */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-go-btn:hover {
+  background-color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+/* 아이콘 간격 */
+.modal-go-btn i {
+  margin-left: 8px;
+  font-size: 0.9em;
+}
+
 /* --- 연락처 및 소셜 링크 --- */
 .contact-content {
   display: flex;

@@ -90,29 +90,32 @@ document.querySelectorAll(".nav-menu a").forEach((n) =>
   })
 );
 
-// 1. 프로젝트별 상세 데이터
+// 1. 프로젝트별 상세 데이터 (link 추가)
 const projectDetails = {
   project1: {
-    title: "대규모 SPA 리뉴얼",
+    title: "DUST",
     image: "dust.jpg",
-    desc: "이 프로젝트는 기존의 노후화된 시스템을 현대적인 React 아키텍처로 전환한 사례입니다. Redux를 활용한 상태 관리 최적화로 로딩 속도를 40% 개선했습니다.",
+    desc: "데이터 시각화 중심의 인터랙티브 미세먼지 알림 서비스 사이트를 구현하였습니다. 사용자에게 실질적인 도움을 줄 수 있는 환경 정보를 디자인적 관점에서 재해석한 프로젝트입니다. API를 활용하여 대기질 정보를 실시간 정보 제공 시스템으로 구현하였으며, 사용자가 접속 즉시 직관적으로 현재 상태를 인지할 수 있도록 설계했습니다. 모바일 우선 디자인 원칙을 바탕으로 기기의 해상도에 구애받지 않는 일관된 사용자 경험을 제공하며, 비주얼적인 심미성과 데이터의 신뢰성을 동시에 확보하는 데 주력했습니다.",
     stack: "#React #TypeScript #Redux",
+    link: "https://chemidust.netlify.app/",
   },
   project2: {
-    title: "AI 기반 코드 어시스턴트",
-    image: "D-ON.jpg",
-    desc: "ChatGPT API와 Cursor를 활용하여 팀 내 개발 생산성을 높이는 도구를 구축했습니다. 반복적인 코드 작성을 자동화하여 업무 효율을 극대화했습니다.",
+    title: "D:ON",
+    image: "D_ON.png",
+    desc: "D:ON은 대구(Daegu)의 낮(Day)과 밤(Night)을 켠다(ON)는 의미를 담은 대구 관광 정보 플랫폼입니다. 다크모드와 라이트모드를 통해 시각적으로도 낮과 밤을 경험할 수 있으며, 각 테마에 맞는 콘텐츠를 자동으로 제공받을 수 있습니다.",
     stack: "#AI #Node.js #GPT-API",
+    link: "https://glroia7372-lab.github.io/D-ON/",
   },
   project3: {
-    title: "PHP 레거시 연동 인터페이스",
+    title: "Round LAB",
     image: "roundLab.jpg",
-    desc: "기존 PHP 기반의 백엔드 환경에서 최신 UI를 구현하기 위해 Ajax 통신을 최적화하고 사용자 경험을 개선한 프로젝트입니다.",
+    desc: "라운드랩(ROUND LAB) 브랜드 아이덴티티 강화를 위한 웹 사이트를 리뉴얼하였습니다. 라운드랩의 핵심 자산인 ‘독도 라인’의 고객 구매 여정을 최적화하기 위해 메인 페이지 큐레이션을 전면 개편했습니다. 깔끔한 디자인 톤앤매너를 유지하면서도 브랜드 이미지를 확실하게 각인시킬 수 있는 그리드 레이아웃을 적용하였으며, 사용자 경험을 고려한 반응형 인터페이스를 통해 제품 주목도를 극대화했습니다.",
     stack: "#PHP #jQuery #Ajax",
+    link: "https://test20.dothome.co.kr/roundLab/",
   },
 };
 
-// 2. 모달 열기 함수
+// 2. 모달 열기 함수 (버튼 코드 추가)
 function openModal(projectId) {
   const modal = document.getElementById("projectModal");
   const modalBody = document.getElementById("modal-body");
@@ -123,11 +126,17 @@ function openModal(projectId) {
         <img src="${data.image}" alt="${data.title}">
         <p><strong>기술 스택:</strong> ${data.stack}</p>
         <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
-        <p>${data.desc}</p>
+        <p style="margin-bottom: 30px;">${data.desc}</p>
+        
+        <div style="text-align: center;">
+            <a href="${data.link}" target="_blank" class="btn primary modal-go-btn">
+                사이트 바로가기 <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
     `;
 
   modal.style.display = "block";
-  document.body.style.overflow = "hidden"; // 스크롤 방지
+  document.body.style.overflow = "hidden";
 }
 
 // 3. 모달 닫기 함수
