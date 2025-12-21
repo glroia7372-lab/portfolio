@@ -89,3 +89,58 @@ document.querySelectorAll(".nav-menu a").forEach((n) =>
     menu.classList.remove("is-active");
   })
 );
+
+// 1. 프로젝트별 상세 데이터
+const projectDetails = {
+  project1: {
+    title: "대규모 SPA 리뉴얼",
+    image: "dust.jpg",
+    desc: "이 프로젝트는 기존의 노후화된 시스템을 현대적인 React 아키텍처로 전환한 사례입니다. Redux를 활용한 상태 관리 최적화로 로딩 속도를 40% 개선했습니다.",
+    stack: "#React #TypeScript #Redux",
+  },
+  project2: {
+    title: "AI 기반 코드 어시스턴트",
+    image: "D-ON.jpg",
+    desc: "ChatGPT API와 Cursor를 활용하여 팀 내 개발 생산성을 높이는 도구를 구축했습니다. 반복적인 코드 작성을 자동화하여 업무 효율을 극대화했습니다.",
+    stack: "#AI #Node.js #GPT-API",
+  },
+  project3: {
+    title: "PHP 레거시 연동 인터페이스",
+    image: "roundLab.jpg",
+    desc: "기존 PHP 기반의 백엔드 환경에서 최신 UI를 구현하기 위해 Ajax 통신을 최적화하고 사용자 경험을 개선한 프로젝트입니다.",
+    stack: "#PHP #jQuery #Ajax",
+  },
+};
+
+// 2. 모달 열기 함수
+function openModal(projectId) {
+  const modal = document.getElementById("projectModal");
+  const modalBody = document.getElementById("modal-body");
+  const data = projectDetails[projectId];
+
+  modalBody.innerHTML = `
+        <h2>${data.title}</h2>
+        <img src="${data.image}" alt="${data.title}">
+        <p><strong>기술 스택:</strong> ${data.stack}</p>
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+        <p>${data.desc}</p>
+    `;
+
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // 스크롤 방지
+}
+
+// 3. 모달 닫기 함수
+function closeModal() {
+  const modal = document.getElementById("projectModal");
+  modal.style.display = "none";
+  document.body.style.overflow = "auto"; // 스크롤 재개
+}
+
+// 4. 모달 바깥 영역 클릭 시 닫기
+window.onclick = function (event) {
+  const modal = document.getElementById("projectModal");
+  if (event.target == modal) {
+    closeModal();
+  }
+};
