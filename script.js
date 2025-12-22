@@ -118,7 +118,7 @@ const projectDetails = {
     image: "팀프로젝트_메인화면.png",
     desc: "스마트 웹&콘텐츠 개발 실무에서 활용되는 실무 기술을 활용하여 서버와 연동된 반응형 웹앱 콘텐츠를 개발하고 MCP를 활용한 결제 모듈 구현 및 마케팅 기술을 습득하고 협업을 통한 팀프로젝트를 진행중입니다.",
     stack: "#PHP #jQuery #Ajax",
-    link: "https://test20.dothome.co.kr/roundLab/",
+    link: "",
   },
 };
 
@@ -128,12 +128,18 @@ function openModal(projectId) {
   const modal = document.getElementById("projectModal");
   const modalBody = document.getElementById("modal-body");
 
+  // 링크가 비어있으면 '진행중' 문구 표시, 있으면 링크 버튼 표시
+  const linkButton =
+    project.link && project.link.trim() !== ""
+      ? `<a href="${project.link}" target="_blank" class="modal-go-btn">프로젝트 보기 →</a>`
+      : `<div class="modal-status-btn">진행중</div>`;
+
   modalBody.innerHTML = `
     <h2>${project.title}</h2>
     <img src="${project.image}" alt="${project.title}">
     <p class="tech-stack" style="color: #666; font-weight: bold; margin: 15px 0;">${project.stack}</p>
     <p style="margin-bottom: 25px;">${project.desc}</p>
-    <a href="${project.link}" target="_blank" class="modal-go-btn">프로젝트 보기 →</a>
+    ${linkButton}
   `;
 
   modal.style.display = "block";
