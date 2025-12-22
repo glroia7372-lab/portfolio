@@ -193,7 +193,6 @@ body {
   }
 
   /* 그리드 시스템을 1열로 변경 */
-  .skills-grid,
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -207,15 +206,15 @@ body {
 /* 기존 hero-content 대신 hero-content-wrapper 사용 */
 .hero-content-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center; /* 수직 중앙 정렬 */
-  text-align: left;
+  text-align: center;
 }
 
-/* 텍스트 영역 (왼쪽) */
+/* 텍스트 영역 (중앙 정렬) */
 .hero-text-area {
-  flex: 2; /* 텍스트가 더 많은 공간을 차지하게 함 */
-  max-width: 60%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .subtitle {
@@ -301,43 +300,69 @@ body {
   }
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+/* 기술 스택 섹션 레이아웃 */
+.skills-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-top: 60px;
   text-align: left;
 }
 
-.skill-card {
-  padding: 30px;
-  background: var(--card-bg);
-  border-radius: 10px;
-  box-shadow: var(--card-shadow);
-  border-left: 5px solid var(--primary-color);
-  border: 1px solid var(--border-color);
-  transition: all 0.3s ease;
+.skills-image-area {
+  flex-shrink: 0;
 }
 
-.skill-card:hover {
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
-  transform: translateY(-4px);
+.skills-profile-image {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--primary-color);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+  margin-right: 60px;
 }
 
-.skill-card h4 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+.skills-info-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.info-section {
+  margin-bottom: 20px;
+}
+
+.info-name {
+  font-size: 2.5rem;
+  font-weight: 800;
   color: var(--primary-color);
+  margin-bottom: 8px;
 }
 
-.skill-card p {
-  font-size: 1rem;
-  margin-bottom: 5px;
-}
-
-.skill-card .detail {
-  font-size: 0.9rem;
+.info-title {
+  font-size: 1.3rem;
   color: var(--text-secondary);
-  margin-top: 10px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.info-subtitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.info-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.8;
+  margin: 0;
 }
 
 /* --- 기술 스택 아이콘 --- */
@@ -490,8 +515,11 @@ body {
 }
 
 .project-info h4 {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-size: 1.3rem;
+}
+.project-info p {
+  margin-bottom: 20px;
 }
 
 .tech-stack {
@@ -642,22 +670,31 @@ footer {
 
   .hero-text-area {
     max-width: 100%;
-    order: 2; /* 텍스트를 이미지 아래로 이동 */
   }
 
-  .hero-image-area {
-    order: 1; /* 이미지를 텍스트 위로 이동 */
-    justify-content: center;
-    padding: 0 0 30px; /* 아래쪽 여백 추가 */
+  .skills-content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
   }
 
-  .profile-image {
-    width: 250px;
-    height: 250px; /* 모바일에서 적절한 크기로 조정 */
+  .skills-profile-image {
+    width: 220px;
+    height: 220px;
   }
 
-  .skills-grid {
-    grid-template-columns: 1fr; /* 모바일에서 1열로 변경 */
+  .skills-info-area {
+    text-align: left;
+    width: 100%;
+  }
+
+  .info-name {
+    font-size: 2rem;
+  }
+
+  .info-title {
+    font-size: 1.1rem;
   }
 
   .tech-icons-container {

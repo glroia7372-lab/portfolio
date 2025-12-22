@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- 배경 원 (그라데이션 효과) -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#grad)"/>
+  
+  <!-- 디자이너 마크: 대문자 D (Designer) -->
+  <path d="M 28 22 L 28 78 L 52 78 Q 68 78 68 50 Q 68 22 52 22 Z" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- 디자인 액센트: 작은 원형 (창의성 표현) -->
+  <circle cx="60" cy="38" r="4" fill="#ffffff"/>
+</svg>
+
