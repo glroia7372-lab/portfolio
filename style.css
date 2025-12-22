@@ -495,10 +495,10 @@ body {
   background: var(--card-bg);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 12px 24px rgba(20, 30, 50, 0.15);
   transition: all 0.3s ease;
   text-align: left;
-  border: 1px solid var(--border-color);
+  border: 0px solid var(--border-color);
 }
 
 .project-card:hover {
