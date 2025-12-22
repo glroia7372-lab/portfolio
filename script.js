@@ -113,6 +113,13 @@ const projectDetails = {
     stack: "#PHP #jQuery #Ajax",
     link: "https://test20.dothome.co.kr/roundLab/",
   },
+  project4: {
+    title: "TONES",
+    image: "팀프로젝트_메인화면.png",
+    desc: "스마트 웹&콘텐츠 개발 실무에서 활용되는 실무 기술을 활용하여 서버와 연동된 반응형 웹앱 콘텐츠를 개발하고 MCP를 활용한 결제 모듈 구현 및 마케팅 기술을 습득하고 협업을 통한 팀프로젝트를 진행중입니다.",
+    stack: "#PHP #jQuery #Ajax",
+    link: "https://test20.dothome.co.kr/roundLab/",
+  },
 };
 
 // 2. 모달 열기 함수

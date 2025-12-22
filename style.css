@@ -51,6 +51,7 @@ body {
 
 .highlight {
   color: var(--primary-color);
+  font-weight: 700;
 }
 
 /* --- 버튼 스타일 (다크 모드에 맞게) --- */
@@ -227,6 +228,7 @@ body {
   font-size: 4.5rem;
   line-height: 1.2;
   margin-bottom: 25px;
+  font-weight: 400;
 }
 
 .description {
