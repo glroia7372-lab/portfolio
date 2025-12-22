@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 1. 스크롤 시 헤더 그림자 변경 (입체감 부여)
   window.addEventListener("scroll", function () {
     if (window.scrollY > 50) {
-      header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.5)";
+      header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.05)";
     } else {
       header.style.boxShadow = "none";
     }
